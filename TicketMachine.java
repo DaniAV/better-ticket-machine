@@ -48,6 +48,34 @@ public class TicketMachine
     }
     
     /**
+     * Método que imprime el ticket rebajado
+     */
+    public void printTicketWhitDiscont()
+    {
+    if(balance >= priceWhitDiscont)
+        {
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Ticket");
+            System.out.println("# " + priceWhitDiscont + " cents.");
+            System.out.println("##################");
+            System.out.println();
+            
+            
+            total = total + priceWhitDiscont;
+           
+            balance = balance - priceWhitDiscont;
+        }
+    else
+        {
+        int amountLeftToPay;
+            amountLeftToPay = priceWhitDiscont - balance;
+            System.out.println("You must insert at least: " +
+                               (amountLeftToPay) + " more cents.");
+        }
+    }
+    
+    /**
      * Return The amount of money already inserted for the
      * next ticket.
      */
