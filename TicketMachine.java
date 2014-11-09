@@ -17,6 +17,8 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    //Precio con el 10% de descuento
+    private int priceWhitDiscont;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -26,6 +28,7 @@ public class TicketMachine
         price = cost;
         balance = 0;
         total = 0;
+        priceWhitDiscont = cost - (cost*10)/100;
     }
 
     /**
@@ -35,7 +38,15 @@ public class TicketMachine
     {
         return price;
     }
-
+    
+    /**
+     * Muestra el precio del billete rebajado un 10%
+     */
+    public int getPriceWhitDiscont()
+    {
+        return priceWhitDiscont;
+    }
+    
     /**
      * Return The amount of money already inserted for the
      * next ticket.
