@@ -23,14 +23,14 @@ public class TicketMachine
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int cost, int discount)
     {
         price = cost;
         balance = 0;
         total = 0;
-        priceWhitDiscont = cost - (cost*10)/100;
+        priceWhitDiscont = price - (discount*price)/100;
     }
-
+   
     /**
      * @Return The price of a ticket.
      */
