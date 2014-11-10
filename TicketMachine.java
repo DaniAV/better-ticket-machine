@@ -19,16 +19,19 @@ public class TicketMachine
     private int total;
     //Precio con el 10% de descuento
     private int priceWhitDiscont;
+    //Atributo en el que se guarda si la maquina es con o sin descuento
+    private boolean typeMachine;
 
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost, int discount)
+    public TicketMachine(int cost, int discount, boolean type)
     {
         price = cost;
         balance = 0;
         total = 0;
         priceWhitDiscont = price - (discount*price)/100;
+        typeMachine = type;
     }
    
     /**
@@ -52,7 +55,7 @@ public class TicketMachine
      */
     public void printTicketWhitDiscont()
     {
-    if(balance >= priceWhitDiscont)
+    if(balance >= priceWhitDiscont && typeMachine == true)
         {
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
@@ -65,6 +68,10 @@ public class TicketMachine
             total = total + priceWhitDiscont;
            
             balance = balance - priceWhitDiscont;
+        }
+    else if (balance >= priceWhitDiscont && typeMachine == false)
+        {
+            System.out.println("Esta máquina no imprime con descuento");
         }
     else
         {
